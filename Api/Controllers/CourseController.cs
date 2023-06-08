@@ -24,8 +24,9 @@ public class CourseController : ControllerBase
     }
 
     [HttpPost]
-    public async Task Post([FromBody]CourseDTO course)
+    public async Task<ActionResult> Post(CourseDTO course)
     {
-        await mediator.Send(new CreateCourseRequest(course));
+        int result = await mediator.Send(new CreateCourseRequest(course));
+        return Ok(result);
     }
 }
