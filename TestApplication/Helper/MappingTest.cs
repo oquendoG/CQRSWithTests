@@ -2,10 +2,10 @@
 using AutoMapper;
 using Domain.Entities;
 
-namespace App.Courses.Mapping;
-public class MappingProfile : Profile
+namespace App.Helper;
+public class MappingTest : Profile
 {
-    public MappingProfile()
+    public MappingTest()
     {
         CreateMap<Course, CourseDTO>().ReverseMap();
     }
